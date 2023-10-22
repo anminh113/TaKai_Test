@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "51905861-e257-4a13-9b61-1094ed588981",
+		"name": "takai-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6439230"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUzMzJlYmIwNDg0YWFlODhiMjI2MDcyIiwiZW1haWwiOiJodXluaGtoYWNkdXkyOTAxQGdtYWlsLmNvbSIsImlhdCI6MTY5Nzg2MDQwNCwiZXhwIjoxNjk3ODY3NjA0fQ.c35yaMmLxSnU2WGHbGJIsjs39MXO1DFlwmJDxgqG4Zk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "csvFile",
+							"type": "file",
+							"src": "/Users/duyhuynh/Downloads/Untitled spreadsheet123_CSV.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Huynh\",\n    \"last_name\": \"Duy\",\n    \"email\": \"huynhkhacduy2901@gmail.com\",\n    \"password\": \"duy123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"email\": \"huynhkhacduy2901@gmail.com\",\n     \"password\": \"duy123\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
