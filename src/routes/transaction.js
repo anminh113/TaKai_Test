@@ -5,7 +5,7 @@ const multer = require('multer');
 const auth = require("../middleware/auth");
 
 const upload = multer({
-  dest: 'uploads/', // Directory where uploaded files will be stored
+  dest: 'src/uploads/', // Directory where uploaded files will be stored
   limits: { fileSize: 100 * 1024 * 1024 }, // Limit file size to 100MB
 });
 

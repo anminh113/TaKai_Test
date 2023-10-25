@@ -22,6 +22,7 @@ npm install
 npm start
 ```
 - Import takai-test.postman_collection.json file to Postman
+- About API transfer transaction data to database by CSV file please add "x-access-token" key and "token" value from login API to header
 
 Finally, navigate to `http://localhost:3000` and you should see the template being served.
 
@@ -46,17 +47,18 @@ Finally, navigate to `http://localhost:3000` and you should see the template bei
 │   │
 │   └── app.js
 │
-├── LICENSE
+├── .gitignore
 ├── .env
-├── app.js
+├── .env.local
 ├── package.json
 ├── takai-test.postman_collection.json
 └── README.md
+
 ```
 ## Features
 * API register user
 * APT login and get token access to transfer data
-* API transfer transaction data to database
+* API transfer transaction data to database by CSV file
 
 ## Contact
 Created by [DuyHuynh](https://github.com/anminh113)

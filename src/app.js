@@ -11,10 +11,9 @@ mongoose.connect(process.env.DB_URI, {
   useUnifiedTopology: true,
 });
 
-// Middleware
 app.use(bodyParser.json());
 
-// Define routes here
+// Define routes
 const transactionRoutes = require('./routes/transaction');
 app.use('/transaction', transactionRoutes);
 const userRoutes = require('./routes/user');
@@ -26,7 +25,7 @@ app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 });
 
-// This should be the last route else any after it won't work
+// The last route else any after it won't work
 app.use("*", (req, res) => {
   res.status(404).json({
     success: "false",

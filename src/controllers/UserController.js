@@ -11,7 +11,7 @@ const login = async (req, res) => {
           res.status(400).json({ message: 'All input is required'});
         }
         const user = await User.findOne({ email });
-    
+
         if (user && (await bcrypt.compare(password, user.password))) {
           const token = jwt.sign(
             { user_id: user._id, email },
@@ -21,9 +21,10 @@ const login = async (req, res) => {
             }
           );
           user.token = token;
-          res.status(200).json(user);
+          res.status(200).json({ token: user.token});
+        } else {
+          res.status(400).json({ message: 'Invalid Credentials'});
         }
-        res.status(400).json({ message: 'Invalid Credentials'});
       } catch (err) {
         console.log(err);
       }
@@ -55,8 +56,8 @@ const register = async (req, res) => {
             }
         );
         user.token = token;
-        res.status(201).json(user);
-    } catch (err) {
+        res.status(200).json({ token: user.token});
+      } catch (err) {
         console.log(err);
     }
 };
